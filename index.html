@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEXONE FINANCE — Your Trusted Finance Partner</title>
+  <meta name="description" content="APEXONE FINANCE PTY LTD — Home Loans, Business Finance, Car Loans & Refinancing in NSW, Australia. Fast approval, competitive rates.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.7;
+      background: #fff;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Nav ─── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+      z-index: 100; padding: 14px 0;
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo {
+      font-size: 1.25rem; font-weight: 800; color: #0a2540;
+      letter-spacing: -0.5px;
+    }
+    nav .logo span { color: #c8a45c; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav a {
+      text-decoration: none; color: #555; font-size: .9rem; font-weight: 500;
+      transition: color .2s;
+    }
+    nav a:hover { color: #0a2540; }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 50%, #0a2540 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1600&q=80') center/cover no-repeat;
+      opacity: .12;
+    }
+    .hero .container { position: relative; z-index: 1; padding: 120px 24px 80px; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #c8a45c; }
+    .hero p {
+      font-size: 1.15rem; color: rgba(255,255,255,.75);
+      max-width: 600px; margin-bottom: 36px;
+    }
+    .hero .cta {
+      display: inline-block;
+      background: #c8a45c; color: #0a2540;
+      padding: 14px 40px; border-radius: 6px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: background .2s;
+    }
+    .hero .cta:hover { background: #d4b46c; }
+
+    /* ─── Sections ─── */
+    section { padding: 80px 0; }
+    section h2 {
+      font-size: 2rem; font-weight: 700; text-align: center;
+      margin-bottom: 12px; color: #0a2540;
+    }
+    section .subtitle {
+      text-align: center; color: #888; margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+
+    /* ─── About ─── */
+    #about { background: #f9fafb; }
+    #about .grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    #about img { border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    #about p { color: #555; font-size: 1.05rem; }
+
+    /* ─── Services ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: #fff; border: 1px solid #eee; border-radius: 12px;
+      padding: 36px 28px; text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06);
+    }
+    .service-card .icon { font-size: 2.6rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.15rem; margin-bottom: 10px; color: #0a2540; }
+    .service-card p { color: #777; font-size: .93rem; }
+
+    /* ─── Why Us ─── */
+    #why { background: #f9fafb; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      background: #fff; border-radius: 12px; padding: 32px 24px;
+      border: 1px solid #eee;
+    }
+    .why-card h3 { font-size: 1.05rem; margin-bottom: 8px; color: #0a2540; }
+    .why-card p { color: #777; font-size: .92rem; }
+
+    /* ─── Contact ─── */
+    #contact {
+      background: #0a2540; color: #fff;
+    }
+    #contact h2 { color: #fff; }
+    #contact .subtitle { color: rgba(255,255,255,.55); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    }
+    .contact-info p { margin-bottom: 12px; color: rgba(255,255,255,.75); font-size: 1rem; }
+    .contact-info strong { color: #fff; }
+    .contact-phone {
+      font-size: 1.6rem; font-weight: 800; color: #c8a45c;
+      display: block; margin: 10px 0 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; padding: 12px 16px; border: none; border-radius: 6px;
+      margin-bottom: 14px; font-size: .95rem; font-family: inherit;
+      background: rgba(255,255,255,.1); color: #fff;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.4); }
+    .contact-form textarea { min-height: 100px; resize: vertical; }
+    .contact-form button {
+      background: #c8a45c; color: #0a2540; border: none;
+      padding: 12px 32px; border-radius: 6px; font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: background .2s;
+    }
+    .contact-form button:hover { background: #d4b46c; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #071b30; color: rgba(255,255,255,.5);
+      padding: 32px 0; text-align: center; font-size: .85rem;
+    }
+    footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+    footer a:hover { color: #c8a45c; }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      #about .grid { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">APEXONE<span>FINANCE</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Hero ─── -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Your Trusted<br><span>Finance Partner</span> in NSW</h1>
+    <p>Helping Australians secure the right finance — from home loans to business funding. We make borrowing simple, transparent, and stress-free.</p>
+    <a href="#contact" class="cta">Get in Touch</a>
+  </div>
+</section>
+
+<!-- ─── About ─── -->
+<section id="about">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h2>Who We Are</h2>
+        <p>APEXONE FINANCE PTY LTD is a Sydney-based financial services company dedicated to helping individuals and businesses find the right loan solutions. Whether you're buying your first home, expanding your business, or refinancing existing debt, we work with you to secure competitive rates and a smooth approval process.</p>
+        <p style="margin-top:16px;">We believe in transparency, integrity, and putting our clients first. No hidden fees, no jargon — just honest advice tailored to your situation.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="Finance documents and calculator" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Services ─── -->
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="subtitle">Tailored finance solutions to meet your goals</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🏠</div>
+        <h3>Home Loans</h3>
+        <p>First home buyer, investment property, or upgrading? We help you find the right home loan with competitive rates and expert guidance.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💼</div>
+        <h3>Business Finance</h3>
+        <p>From start-up capital to equipment financing and business expansion — we connect you with lenders who understand your goals.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🚗</div>
+        <h3>Car Loans</h3>
+        <p>New or used, personal or commercial — get pre-approved quickly with flexible terms and competitive rates across Australia.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔄</div>
+        <h3>Refinancing</h3>
+        <p>Lower your repayments, consolidate debt, or access equity. We review your current loan and find better options for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Why Us ─── -->
+<section id="why">
+  <div class="container">
+    <h2>Why Choose APEXONE FINANCE</h2>
+    <p class="subtitle">We're here to make finance simple</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>⚡ Fast Approval</h3>
+        <p>We streamline the application process and work with responsive lenders to get you answers quickly.</p>
+      </div>
+      <div class="why-card">
+        <h3>📊 Competitive Rates</h3>
+        <p>Our network of lenders means we can shop around for the best rates and terms available to you.</p>
+      </div>
+      <div class="why-card">
+        <h3>👨‍💼 Expert Advice</h3>
+        <p>With years of industry experience, we guide you through every step — no surprises, no stress.</p>
+      </div>
+      <div class="why-card">
+        <h3>🤝 Personal Service</h3>
+        <p>You're not just a number. We take the time to understand your unique situation and find the right solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ─── -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="subtitle">Ready to get started? Call or message us today</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p><strong>APEXONE FINANCE PTY LTD</strong></p>
+        <p>Sydney, NSW &nbsp;|&nbsp; Australia</p>
+        <p style="margin-top:16px;"><strong>📞 Call us</strong></p>
+        <a href="tel:+61240518515" class="contact-phone">(02) 4051 8515</a>
+        <p style="margin-top:12px;"><strong>📧 Email</strong></p>
+        <p><a href="mailto:info@apexonefinance.com.au" style="color:#c8a45c;text-decoration:none;">info@apexonefinance.com.au</a></p>
+        <p style="margin-top:20px;font-size:.9rem;color:rgba(255,255,255,.45);">ABN: 70 694 055 082</p>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your enquiry. We will get back to you shortly.');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number">
+        <select style="width:100%;padding:12px 16px;border:none;border-radius:6px;margin-bottom:14px;font-size:.95rem;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);font-family:inherit;">
+          <option value="" disabled selected style="color:rgba(255,255,255,.4);background:#0a2540;">I'm interested in…</option>
+          <option value="home-loan" style="color:#1a1a2e;background:#fff;">Home Loan</option>
+          <option value="business-finance" style="color:#1a1a2e;background:#fff;">Business Finance</option>
+          <option value="car-loan" style="color:#1a1a2e;background:#fff;">Car Loan</option>
+          <option value="refinancing" style="color:#1a1a2e;background:#fff;">Refinancing</option>
+          <option value="other" style="color:#1a1a2e;background:#fff;">Other</option>
+        </select>
+        <textarea placeholder="Tell us about your needs…"></textarea>
+        <button type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 <strong>APEXONE FINANCE PTY LTD</strong>. All rights reserved.</p>
+    <p style="margin-top:4px;">ABN 70 694 055 082</p>
+  </div>
+</footer>
+
+</body>
+</html>
