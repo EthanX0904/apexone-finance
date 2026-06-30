@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 BLACK DM — 进出口贸易 · Global Trade & Sourcing</title>
+    <meta name="description" content="4 BLACK DM PTY LTD - 澳大利亚进出口贸易公司，专业从事国际采购、供应链管理和跨境贸易服务。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #fff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== HEADER ===== */
+        header { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); color: #fff; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+        .logo span { color: #e94560; }
+        .logo small { display: block; font-size: 11px; font-weight: 400; opacity: .7; letter-spacing: 2px; }
+        nav a { color: rgba(255,255,255,.8); text-decoration: none; margin-left: 28px; font-size: 14px; font-weight: 500; transition: .3s; }
+        nav a:hover { color: #e94560; }
+
+        /* ===== HERO ===== */
+        .hero { background: linear-gradient(135deg, #0f0f1a 0%, #16213e 50%, #1a1a2e 100%); color: #fff; padding: 100px 0 80px; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(233,69,96,.08) 0%, transparent 70%); }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+        .hero h1 span { color: #e94560; }
+        .hero p { font-size: 18px; opacity: .85; margin-bottom: 30px; max-width: 500px; }
+        .hero-stats { display: flex; gap: 40px; margin-top: 40px; }
+        .hero-stats div { text-align: center; }
+        .hero-stats strong { display: block; font-size: 32px; color: #e94560; }
+        .hero-stats span { font-size: 13px; opacity: .7; }
+
+        .hero-right { position: relative; }
+        .hero-right .globe-icon { font-size: 200px; text-align: center; opacity: .15; position: absolute; }
+        .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .hero-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 24px; backdrop-filter: blur(10px); }
+        .hero-card .icon { font-size: 32px; margin-bottom: 8px; }
+        .hero-card h3 { font-size: 15px; margin-bottom: 4px; }
+        .hero-card p { font-size: 12px; opacity: .7; }
+
+        .btn { display: inline-block; padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: none; transition: .3s; }
+        .btn-primary { background: #e94560; color: #fff; }
+        .btn-primary:hover { background: #d63850; transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.3); }
+        .btn-outline:hover { border-color: #e94560; }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+        .section-title p { color: #666; max-width: 600px; margin: 0 auto; }
+        .section-title .bar { width: 60px; height: 4px; background: #e94560; margin: 16px auto 0; border-radius: 2px; }
+
+        /* ===== ABOUT ===== */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+        .about-card { background: #f8f9fa; border-radius: 16px; padding: 36px 28px; text-align: center; transition: .3s; }
+        .about-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+        .about-card .icon { font-size: 40px; margin-bottom: 16px; }
+        .about-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .about-card p { font-size: 14px; color: #666; }
+
+        /* ===== SERVICES ===== */
+        .services { background: #f8f9fa; }
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .service-item { background: #fff; border-radius: 16px; padding: 36px; display: flex; gap: 24px; box-shadow: 0 2px 16px rgba(0,0,0,.04); transition: .3s; }
+        .service-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
+        .service-icon { font-size: 36px; flex-shrink: 0; }
+        .service-item h3 { font-size: 18px; margin-bottom: 6px; }
+        .service-item p { font-size: 14px; color: #666; }
+
+        /* ===== CONTACT ===== */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h3 { font-size: 22px; margin-bottom: 16px; }
+        .contact-info p { color: #666; margin-bottom: 24px; }
+        .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .contact-detail .icon { font-size: 20px; width: 40px; text-align: center; }
+        .contact-detail strong { display: block; font-size: 14px; }
+        .contact-detail span { font-size: 14px; color: #666; }
+
+        .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; margin-bottom: 16px; font-family: inherit; transition: .3s; }
+        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #e94560; box-shadow: 0 0 0 3px rgba(233,69,96,.1); }
+        .contact-form textarea { height: 140px; resize: vertical; }
+
+        /* ===== FOOTER ===== */
+        footer { background: #0f0f1a; color: rgba(255,255,255,.6); padding: 40px 0; text-align: center; font-size: 14px; }
+        footer strong { color: #fff; }
+        footer .logo { margin-bottom: 12px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 32px; }
+            .hero-stats { justify-content: center; }
+            .hero-right { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            nav a { margin-left: 16px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="logo">4 BLACK DM <small>GLOBAL TRADE & SOURCING</small></div>
+        <nav>
+            <a href="#about">关于我们</a>
+            <a href="#services">业务范围</a>
+            <a href="#contact">联系我们</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <div>
+            <h1>链接全球市场<br><span>澳大利亚进出口贸易</span></h1>
+            <p>4 BLACK DM PTY LTD 立足于澳大利亚悉尼，专注于跨境贸易、国际采购与供应链管理，为客户提供高效可靠的一站式贸易服务。</p>
+            <a href="#contact" class="btn btn-primary">📩 获取报价</a>
+            <a href="#services" class="btn btn-outline" style="margin-left:12px;">了解更多</a>
+            <div class="hero-stats">
+                <div><strong>10+</strong><span>合作国家</span></div>
+                <div><strong>50+</strong><span>服务客户</span></div>
+                <div><strong>99%</strong><span>交付准时率</span></div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-cards">
+                <div class="hero-card"><div class="icon">🌏</div><h3>全球采购</h3><p>亚洲 · 欧洲 · 美洲</p></div>
+                <div class="hero-card"><div class="icon">📦</div><h3>物流清关</h3><p>海运 · 空运 · 陆运</p></div>
+                <div class="hero-card"><div class="icon">📋</div><h3>质量管控</h3><p>检验 · 认证 · 追溯</p></div>
+                <div class="hero-card"><div class="icon">🤝</div><h3>代理采购</h3><p>定制化 sourcing</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>关于 4 BLACK DM</h2>
+            <div class="bar"></div>
+            <p>一家扎根悉尼的国际贸易公司，致力于搭建中外商贸桥梁</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>专注进出口</h3>
+                <p>主营澳大利亚与亚太地区之间的商品贸易，涵盖大宗商品、消费品、工业品等多领域。</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🔗</div>
+                <h3>供应链整合</h3>
+                <p>从源头采购到终端配送，全程跟踪管理，降低中间成本，提升供应链效率。</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">✅</div>
+                <h3>合规保障</h3>
+                <p>熟悉澳大利亚进出口法规、关税政策及国际贸易条款（Incoterms），确保每一笔交易合规安全。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>业务范围</h2>
+            <div class="bar"></div>
+            <p>覆盖进出口贸易全链条的专业服务</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">📦</div>
+                <div>
+                    <h3>国际采购 Sourcing</h3>
+                    <p>根据客户需求寻找优质供应商，价格谈判，样品确认，订单跟踪一站式服务。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🚢</div>
+                <div>
+                    <h3>物流与清关</h3>
+                    <p>海运、空运、国际快递代理，澳大利亚海关清关，GST退税，货物保险。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🔍</div>
+                <div>
+                    <h3>质量检验 QC</h3>
+                    <p>第三方验货服务，装柜监装，产品质量追溯，国际认证支持。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📊</div>
+                <div>
+                    <h3>市场准入咨询</h3>
+                    <p>澳大利亚产品准入标准咨询，标签合规，海关编码归类，进口许可证办理。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>联系我们</h2>
+            <div class="bar"></div>
+            <p>有进出口需求？欢迎洽谈合作</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>4 BLACK DM PTY LTD</h3>
+                <p>我们期待与您探讨合作机会，无论是澳洲出口还是国际进口，为您提供最优质的贸易服务。</p>
+                <div class="contact-detail">
+                    <div class="icon">📍</div>
+                    <div><strong>公司地址</strong><span>Sydney, NSW 2000, Australia</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">📧</div>
+                    <div><strong>电子邮箱</strong><span>info@4blackdm.com.au</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">📱</div>
+                    <div><strong>联系电话</strong><span>+61 2 8000 0000</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">🏛️</div>
+                    <div><strong>ABN</strong><span>89 651 130 362</span></div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="您的姓名 *" required>
+                <input type="email" placeholder="电子邮箱 *" required>
+                <input type="text" placeholder="公司名称">
+                <select style="width:100%;padding:14px 18px;border:1px solid #e0e0e0;border-radius:8px;font-size:14px;margin-bottom:16px;font-family:inherit;">
+                    <option>请选择咨询类型</option>
+                    <option>产品采购询价</option>
+                    <option>澳洲出口合作</option>
+                    <option>物流清关咨询</option>
+                    <option>其他合作</option>
+                </select>
+                <textarea placeholder="请描述您的需求... *" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%">📨 发送询盘</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="logo" style="color:#fff;font-size:20px;">4 BLACK DM <small style="display:block;font-size:10px;opacity:.5;">GLOBAL TRADE & SOURCING</small></div>
+        <p style="margin-bottom:8px;">4 BLACK DM PTY LTD &nbsp;|&nbsp; ABN 89 651 130 362 &nbsp;|&nbsp; Sydney, Australia</p>
+        <p>© 2026 4 BLACK DM PTY LTD. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
