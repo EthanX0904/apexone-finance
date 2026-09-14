@@ -1,3 +1,0 @@
-# APEXONE FINANCE
-
-Official website for APEXONE FINANCE PTY LTD
